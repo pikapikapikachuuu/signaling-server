@@ -1,0 +1,65 @@
+{
+  "name": "signaling-server",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "@ali/midway": "^8.0.0",
+    "@midwayjs/bootstrap": "^3.0.0",
+    "@midwayjs/core": "^3.0.0",
+    "@midwayjs/decorator": "^3.0.0",
+    "@midwayjs/socketio": "^3.4.13",
+    "@midwayjs/web": "^3.0.0"
+  },
+  "devDependencies": {
+    "@ali/midway-cli-plugin-ali": "^1.0.0",
+    "@midwayjs/cli": "^1.0.0",
+    "@midwayjs/egg-ts-helper": "^1.2.1",
+    "@midwayjs/mock": "^3.0.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "14",
+    "cross-env": "^6.0.0",
+    "jest": "^26.4.0",
+    "mwts": "^1.0.5",
+    "ts-jest": "^26.2.0",
+    "typescript": "~4.6.0"
+  },
+  "scripts": {
+    "dev": "cross-env ets && cross-env NODE_ENV=local midway-bin dev --ts --entryFile=bootstrap.js",
+    "test": "midway-bin test --ts",
+    "cov": "midway-bin cov --ts",
+    "lint": "mwts check",
+    "lint:fix": "mwts fix",
+    "ci": "npm run cov",
+    "build": "midway-bin build -c"
+  },
+  "midway-bin-clean": [
+    ".vscode/.tsbuildinfo",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pikapikapikachuuu/signaling-server"
+  },
+  "author": "pika",
+  "license": "MIT",
+  "egg": {
+    "framework": "@ali/midway"
+  },
+  "midway-cli": {
+    "plugins": [
+      "@ali/midway-cli-plugin-ali"
+    ]
+  },
+  "engines": {
+    "install-alinode": "7"
+  },
+  "config": {
+    "build": {
+      "deps": "isolation"
+    },
+    "docker": {
+      "os": 7
+    }
+  }
+}
